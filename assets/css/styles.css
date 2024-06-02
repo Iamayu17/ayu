@@ -527,7 +527,11 @@ img {
 }
 
 .skills__js {
-    width: 60%;
+    width: 80%;
+}
+
+.skills__react {
+    width: 80%;
 }
 
 .skills__angular {
@@ -535,7 +539,7 @@ img {
 }
 
 .skills__java {
-    width: 50%;
+    width: 60%;
 }
 
 .skills__node {
@@ -558,10 +562,10 @@ img {
     width: 80%;
 }
 .skills__aemforms{
-    width: 80%;
+    width: 60%;
 }
 .skills__aemsites{
-    width: 60%;
+    width: 90%;
 }
 
 .skills__photoshop {
