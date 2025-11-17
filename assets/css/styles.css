@@ -1301,3 +1301,115 @@ img {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+
+/* Chatbot Toggle Button (Floating Chat Icon) */
+#chatbot-toggler {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--first-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Chatbot Main Container */
+  #chatbot-container {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 320px;
+    max-width: 90vw;
+    max-height: 80vh;
+    display: none;
+    background: #fff;
+    border-radius: 12px;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    z-index: 10000;
+  }
+  
+  /* Header */
+  #chatbot-header {
+    background: var(--first-color);
+    color: white;
+    padding: 10px 12px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Close Button */
+  #chatbot-close {
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  /* Chat Messages */
+  #chatbot-messages {
+    background: #f8f9fa;
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    color: black;
+    word-wrap: break-word;
+  }
+  
+  .chatbot-message {
+    max-width: 75%;
+    padding: 8px 10px;
+    border-radius: 10px;
+    line-height: 1.4;
+    color: black;
+    word-wrap: break-word;
+  }
+  
+  .chatbot-message.bot {
+    background: #e8e8e8;
+    align-self: flex-start;
+  }
+  
+  .chatbot-message.user {
+    background: #cce5ff;
+    align-self: flex-end;
+  }
+  
+  /* FAQ Buttons */
+  #chat-faq-buttons {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .faq-btn {
+    font-size: 14px;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    background: #f1f1f1;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .faq-btn:hover {
+    background: #e0e0e0;
+  }

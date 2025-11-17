@@ -202,6 +202,56 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const toggler = document.getElementById("chatbot-toggler");
+  const chatbot = document.getElementById("chatbot-container");
+  const closeBtn = document.getElementById("chatbot-close");
+  const messages = document.getElementById("chatbot-messages");
+  const faqButtons = document.querySelectorAll(".faq-btn");
+
+  const faqAnswers = {
+    "What services do you offer?": 
+      "✨ I offer frontend (React, Angular), Java backend, AEM Sites, Forms, and UI/UX & graphic design services.",
+    "Can I see your resume?": 
+      '📄 <a href="assets/pdf/Ayush_AEM_FULLSTACK_CGI.pdf" target="_blank">Click to download my resume here</a>.',
+    "How to contact you?": 
+      "📧 <strong>Email:</strong> <a href='mailto:ayushkumarsep1998@gmail.com'>ayushkumarsep1998@gmail.com</a><br>📱 <strong>Call:</strong> 98345XXXXX",
+    "Join WhatsApp Group": 
+      "✅ Join our community on WhatsApp:<br><a href='https://chat.whatsapp.com/YOUR_GROUP_INVITE_LINK' target='_blank' style='color: #25D366;'>Click here to join WhatsApp Group</a>"
+  };
+
+  // Open chatbot
+  toggler.addEventListener("click", () => {
+    chatbot.style.display = "flex";
+  });
+
+  // Close chatbot
+  closeBtn.addEventListener("click", () => {
+    chatbot.style.display = "none";
+  });
+
+  // Append message
+  function addMessage(sender, text) {
+    const msg = document.createElement("div");
+    msg.className = `chatbot-message ${sender}`;
+    msg.innerHTML = text;
+    messages.appendChild(msg);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  // Handle FAQ responses
+  faqButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const question = btn.innerText;
+      addMessage("user", question);
+
+      setTimeout(() => {
+        const response = faqAnswers[question] || "🤔 Sorry, I don't have an answer for that.";
+        addMessage("bot", response);
+      }, 500);
+    });
+  });
+});
 // function sendEmail() {
 //     Email.send({
 //         SecureToken : "89ba90ab-5d32-4149-b954-f8cbedfdc5ab",
